@@ -13,7 +13,8 @@ module.exports = {
     // 경로 별칭 설정
     alias: {
       '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
+      'assets': path.resolve(__dirname, 'src/assets'),
+      'scss': path.resolve(__dirname, 'src/scss')
     }
   },
   // parcel main.js
@@ -36,10 +37,17 @@ module.exports = {
       {
         test: /\.s?css$/, // 정규표현식
         use: [
-          'style-loader',
+          'vue-style-loader',
+          // 'style-loader', 충돌이 나서 vue-style-loader로 변경
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          // 'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "scss/main";'
+            }
+          }
         ]
       },
       {
