@@ -1,0 +1,84 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-wrap: nowrap;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray40;
+    border-radius: $border-radius;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font: {
+    size: $body02;
+    weight: 400;
+  };
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  color: $bk;
+}
+
+a, p {
+  text-wrap: balance;
+}
+h3 {
+  font: {
+    size: $h3;
+    weight: 600;
+  };
+}
+h5 {
+  font: {
+    size: $h5;
+    weight: 500;
+  };
+  margin: 0;
+}
+h6 {
+  font: {
+    size: $h6;
+    weight: 500;
+  };
+}
+
+.subtitle01 {
+  font: {
+    size: $subtitle01;
+    weight: 600;
+  };
+  font-style: normal;
+}
+.subtitle02 {
+  font: {
+    size: $subtitle02;
+    weight: 600;
+  };
+  font-style: normal;
+}
+.caption {
+  font: {
+    size: $caption;
+    weight: 400;
+  };
+  font-style: normal;
+  text-wrap: auto;
+}
+
+
+@media (max-width: 768px) {
+  * {
+    // 작은 화면에서 적용할 스타일
+    font-size: 14px;
+  }
+}
+

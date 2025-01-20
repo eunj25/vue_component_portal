@@ -24,8 +24,10 @@
 
 <style lang="scss" scoped>
 
+  $header-height: 60px;
+
   header {
-    height: var(--header-height);
+    height: $header-height;
     padding: 9px 20px;
     background-color: $bk;
     color: $gray5;
@@ -36,8 +38,8 @@
 
     .menuToggle {
       display: none;
-      padding: var(--space-4);
-      border-radius: var(--border-radius);
+      padding: $space-4;
+      border-radius: $border-radius;
       &:hover {
         background-color: #000;
       }
@@ -45,16 +47,16 @@
     .profile_box {
       display: flex;
       align-items: center;
-      gap: var(--space-12);
-      padding: 0 var(--space-8);
-      border-radius: var(--border-radius);
+      gap: $space-12;
+      padding: 0 $space-8;
+      border-radius: $border-radius;
       &:hover {
         background-color: #111;
         cursor: pointer;
       }
       .photo {
         width: 34px;
-        border-radius: var(--border-radius);
+        border-radius: $border-radius;
         overflow: hidden;
       }
     }
