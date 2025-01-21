@@ -59,6 +59,7 @@ $gray70: #828282;
 $gray80: #616161;
 $gray90: #3D3D3D;
 
+$wh: #fff;
 $bk: #333;
 
 // ============== typography
@@ -84,3 +85,17 @@ $space-40:2.5rem;
 // ============== border
 $border:1px solid $gray40;
 $border-radius: 3px;
+
+// ============== list
+$list-padding-lg: 16px 24px;
+$list-padding-md: 12px 24px;
+$list-padding-sm: 8px 24px;
+$list-padding-mobile: 8px 12px;
+
+$list-hover-gy: $gray30;
+$list-hover-bl: $secondary5;
+$list-focurs-gy: $gray30;
+$list-focurs-bl: $secondary5;
+
+$header-height: 60px;
+$menu-width: 280px;
