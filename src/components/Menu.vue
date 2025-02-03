@@ -1,11 +1,9 @@
 <template>
   <nav class="container_menu">
     <ul>
-      <li>
-        <div 
-          v-for="nav in menu"
-          :key="nav.Depth"
-          class="title">
+      <li v-for="nav in menu"
+          :key="nav.Depth">
+        <div class="title">
           {{ nav.Depth }}
         </div>
         <div
@@ -30,10 +28,18 @@ export default {
     return {
       menu: [
         {
-          Depth: 'test',
+          Depth: 'foundation',
           sub_menu: [
-            { title: 'Button', link: '/home'},
-            { title: 'list', link: '/list'}
+            { title: 'color', link: '/color' },
+            { title: 'typography', link: '/typography' },
+          ],
+        },
+        {
+          Depth: 'components',
+          sub_menu: [
+            { title: 'Button', link: '/button'},
+            { title: 'input', link: '/input'},
+            { title: 'list', link: '/list'},
           ],
         }
       ],
