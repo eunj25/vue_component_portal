@@ -2,8 +2,9 @@
   <Header />  
   <!--  페이지가 바뀌는 건 해당 태그에서 출력이 됨  -->
   <main>
-    <Menu />
+    <Menu  @update-header="updateHeader" />
     <div class="container">
+      <pageHeader :title="pageTitle" :hint="pageHint" />
       <div class="container_inner">
         <RouterView />
       </div>
@@ -13,16 +14,33 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 import Header from '~/components/Header'
 import Menu from '~/components/Menu'
 import Footer from '~/components/Footer'
+import pageHeader from "~/components/pageHeader.vue";
+
 
 export default {
   components: {
     Header,
     Menu,
-    Footer
-  }
+    Footer,
+    pageHeader
+  }, 
+  setup() {
+    const pageTitle = ref("페이지 제목");
+    const pageHint = ref("페이지 설명");
+
+    const updateHeader = (title, hint) => {
+      pageTitle.value = title;
+      pageHint.value = hint;
+    };
+
+    return { pageTitle, pageHint, updateHeader };
+  },
+  
 }
 </script>
 
@@ -43,7 +61,7 @@ export default {
       padding: 0 $space-40;
       display: flex;
       gap: $space-16;
-      flex-direction: column;
+      // flex-direction: column;
     }
   }
 

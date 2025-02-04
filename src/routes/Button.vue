@@ -1,10 +1,5 @@
 <template>
-  <div 
-    class="paper"
-    style="display: flex;
-    gap: 24px;
-    flex-direction: column;"
-  >
+  <Paper>
     <label for="variant">Button color:</label>
     <select id="variant" v-model="selectedVariant">
       <option v-for="variant in variants" :key="variant" :value="variant">
@@ -23,25 +18,27 @@
         {{ size }}
       </option>
     </select>
-  </div>
+  </Paper>
   
-    <div class="paper">
-      <Button 
-        :variant="computedVariant"
-        :size="selectedSize"
-      >
-        Test Button
-      </Button>
-    </div>
+  <Paper>
+    <Button 
+      :variant="computedVariant"
+      :size="selectedSize"
+    >
+      Test Button
+    </Button>
+  </Paper>
 
 </template>
 
 <script>
+import Paper from "~/components/BasePaper.vue";
 import Button from "~/components/BaseButton.vue";
 
 export default {
   components: {
     Button,
+    Paper
   },
   data() {
     return {
@@ -68,36 +65,5 @@ export default {
 
 <style lang="scss">
 
-.paper {
-  border: $border;
-  border-radius: $border-radius;
-  background-color: $wh;
-  padding: $space-16;
-  width: 100%;
 
-  &.info {
-    display: flex;
-    align-items: flex-end; 
-    justify-content: space-between;
-    height: 150px;
-
-    > div:first-child {
-      height: 100%;
-    }
-
-    .icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      color: $wh;
-      border-radius: $border-radius;
-    }
-
-    span.count {
-      color: $gray70;
-    }
-  }
-}
 </style>

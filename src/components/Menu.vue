@@ -11,7 +11,7 @@
           :key="subMenu.Depth"
           class="sub_menu">
           <RouterLink
-            :to="subMenu.link">
+            :to="subMenu.link" @click="updateHeader(subMenu)">
             {{ subMenu.title }}
           </RouterLink>
         </div>
@@ -30,20 +30,26 @@ export default {
         {
           Depth: 'foundation',
           sub_menu: [
-            { title: 'color', link: '/color' },
-            { title: 'typography', link: '/typography' },
+            { title: 'color', link: '/color', hint: "color를 확인합니다." },
+            { title: 'typography', link: '/typography', hint: "typography를 확인합니다." },
           ],
         },
         {
           Depth: 'components',
           sub_menu: [
-            { title: 'Button', link: '/button'},
-            { title: 'input', link: '/input'},
-            { title: 'list', link: '/list'},
+            { title: 'Badge', link: '/badge', hint: "badge 컴포넌트를 확인합니다."},
+            { title: 'Button', link: '/button', hint: "button 컴포넌트를 확인합니다."},
+            { title: 'input', link: '/input', hint: "input 컴포넌트를 확인합니다."},
+            { title: 'selectbox', link: '/selectbox', hint: "selectbox 컴포넌트를 확인합니다."},
           ],
         }
       ],
     };
+  },
+  methods: {
+    updateHeader(subMenu) {
+      this.$emit("update-header", subMenu.title, subMenu.hint);
+    },
   },
 };
 </script>

@@ -61,6 +61,7 @@ h6 {
     size: $h6;
     weight: 500;
   };
+  margin: 0;
 }
 
 .subtitle01 {
@@ -86,6 +87,19 @@ h6 {
   text-wrap: auto;
 }
 
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 768px) {
   * {
