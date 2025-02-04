@@ -47,10 +47,12 @@ h2,
 h3,
 h4,
 h5,
+h6,
 button,
 input,
 label {
   line-height: 1.1;
+  margin: 0;
 }
 
 /* 제목에 대한 text-wrap을 balance로 설정합니다. */

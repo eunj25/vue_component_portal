@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "BaseButton",
+  name: "Button",
   props: {
     label: {
       type: String,
