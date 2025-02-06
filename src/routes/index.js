@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from './Home'
+import button from './Button'
+import badge from './Badge'
+import input from './Input'
+import selectbox from './Selectbox'
 
 export default createRouter({
   // Hash
@@ -13,8 +16,20 @@ export default createRouter({
   // https://www.google.com/about
   routes: [
     {
-      path:'/',
-      component: Home
+      path:'/badge',
+      component: badge
+    },
+    {
+      path:'/button',
+      component: button
+    },
+    {
+      path:'/input',
+      component: input
+    },
+    {
+      path:'/selectbox',
+      component: selectbox
     },
   ]
 })
