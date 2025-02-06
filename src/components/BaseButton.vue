@@ -2,31 +2,8 @@
   <button
     :class="buttonClasses" 
     :type="type"
-    :disabled="disabled || loading"
   >
     <slot>{{ label }}</slot>
-
-    <!-- Loading Spinner -->
-    <!-- <span v-if="loading" class="button__spinner"></span> -->
-
-    <!-- Leading Icon -->
-    <!-- <span v-if="icon && iconPosition === 'left'" class="button__icon">
-      <slot name="icon-left">
-        <img :src="icon" alt="" />
-      </slot>
-    </span> -->
-
-    <!-- Button Text or Slot Content -->
-    <!-- <span v-if="!loading" class="button__label">
-      <slot>{{ label }}</slot>
-    </span> -->
-
-    <!-- Trailing Icon -->
-    <!-- <span v-if="icon && iconPosition === 'right'" class="button__icon">
-      <slot name="icon-right">
-        <img :src="icon" alt="" />
-      </slot>
-    </span> -->
   </button>
 </template>
 
@@ -50,37 +27,13 @@ export default {
       type: String,
       default: "button", 
     },
-    // disabled: {
-    //   type: Boolean,
-    //   default: false, 
-    // },
-    // loading: {
-    //   type: Boolean,
-    //   default: false, 
-    // },
-    // icon: {
-    //   type: String,
-    //   default: null, 
-    // },
-    // iconPosition: {
-    //   type: String,
-    //   default: "left"
-    // },
   },
-  // methods: {
-  //   handleClick(event) {
-  //     if (!this.disabled && !this.loading) {
-  //       this.$emit("click", event); // Emit the `click` event to the parent
-  //     }
-  //   },
-  // },
   computed: {
     buttonClasses() {
       return [
         "button",
         `button--${this.variant}`,
         `button--${this.size}`,
-        // { "button--disabled": this.disabled, "button--loading": this.loading },
       ];
     },
   },

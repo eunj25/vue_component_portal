@@ -1,23 +1,23 @@
 <template>
   <Paper>
-    <label for="variant">Button color:</label>
-    <select id="variant" v-model="selectedVariant">
-      <option v-for="variant in variants" :key="variant" :value="variant">
-        {{ variant }}
-      </option>
-    </select>
+    <label for="variant">Button color</label>
+    <Select 
+      v-model="selectedVariant" 
+      :options="selectedVariants" 
+      size="md" 
+    />
+    
+    <label for="size">Button Size</label>
+    <Select 
+    v-model="selectedSize" 
+    :options="selectedSizes" 
+    size="md" 
+    />
   
     <label>
       <input type="checkbox" v-model="isOutlined" />
       Button Outline
     </label>
-  
-    <label for="size">Button Size:</label>
-    <select id="size" v-model="selectedSize">
-      <option v-for="size in sizes" :key="size" :value="size">
-        {{ size }}
-      </option>
-    </select>
   </Paper>
   
   <Paper>
@@ -34,32 +34,36 @@
 <script>
 import Paper from "~/components/BasePaper.vue";
 import Button from "~/components/BaseButton.vue";
+import Select from "~/components/BaseSelectbox.vue";
 
 export default {
   components: {
     Button,
-    Paper
+    Paper,
+    Select
   },
   data() {
     return {
       selectedVariant: "bk",
       selectedSize: "xs",
+      selectedVariants: [
+        { label: "Black", value: "bk" },
+        { label: "Blue", value: "bl" },
+        { label: "Red", value: "rd" },
+      ],
+      selectedSizes: [
+        { label: "Extra Small", value: "xs" },
+        { label: "Small", value: "sm" },
+        { label: "Medium", value: "md" },
+      ],
       isOutlined: false,
-      
-      variants: ["bk", "bl", "rd"],
-      sizes: ["xs", "sm", "md"],
     };
   },
   computed: {
     computedVariant() {
       return this.isOutlined ? `${this.selectedVariant}-outline` : this.selectedVariant;
     },
-  },
-  watch: {
-    selectedSize() {
-      this.$emit("update:size", this.selectedSize);
-    },
-  },
+  }
 };
 </script>
 

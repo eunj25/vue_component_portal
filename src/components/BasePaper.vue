@@ -43,4 +43,12 @@ export default {
   }
 }
 
+@media (max-width: 900px) {
+    .paper {
+      display: flex;
+      flex-direction: column;
+      gap: $space-8;
+    }
+  }
+
 </style>

@@ -1,18 +1,18 @@
 <template>
   <Paper>
-    <label for="variant">Button color:</label>
-    <select id="variant" v-model="selectedVariant">
-      <option v-for="variant in variants" :key="variant" :value="variant">
-        {{ variant }}
-      </option>
-    </select>
+    <label for="variant">badge color</label>
+    <Select 
+      v-model="selectedVariant" 
+      :options="selectedVariants" 
+      size="md" 
+    />
 
-    <label for="type">Button Size:</label>
-    <select id="type" v-model="selectedType">
-      <option v-for="type in types" :key="type" :value="type">
-        {{ type }}
-      </option>
-    </select>
+    <label for="type">badge Size</label>
+    <Select 
+      v-model="selectedType" 
+      :options="selectedTypes" 
+      size="md" 
+    />
   </Paper>
 
   <Paper>
@@ -28,29 +28,34 @@
 <script>  
 import Badge from "~/components/BaseBadge.vue";
 import Paper from "~/components/BasePaper.vue";
+import Select from "~/components/BaseSelectbox.vue";
 
 export default {
   components: {
     Badge,
+    Select,
     Paper
   },
   data() {
     return {
       selectedVariant: "bl",
       selectedType: "default",
-      
-      variants: ["bl", "rd", "ye", "gr", "gy", "sk"],
-      types: ["default", "light", "line", "clean"],
+      selectedVariants: [
+        { label: "Blue", value: "bl" },
+        { label: "sky", value: "sk" },
+        { label: "Red", value: "rd" },
+        { label: "yellow", value: "ye" },
+        { label: "green", value: "gr" },
+        { label: "gray", value: "gy" },
+      ],
+      selectedTypes: [
+        { label: "Default", value: "default" },
+        { label: "light", value: "light" },
+        { label: "line", value: "line" },
+        { label: "clean", value: "clean" },
+      ],
     };
-  },
-  watch: {
-    selectedVariant() {
-      this.$emit("update:size", this.selectedVariant);
-    },
-    selectedType() {
-      this.$emit("update:size", this.selectedType);
-    },
-  },
+  }
 };
 
 </script>
