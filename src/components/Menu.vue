@@ -39,8 +39,11 @@ export default {
           sub_menu: [
             { title: 'Badge', link: '/badge', hint: "badge 컴포넌트를 확인합니다."},
             { title: 'Button', link: '/button', hint: "button 컴포넌트를 확인합니다."},
-            { title: 'input', link: '/input', hint: "input 컴포넌트를 확인합니다."},
-            { title: 'selectbox', link: '/selectbox', hint: "selectbox 컴포넌트를 확인합니다."},
+            { title: 'Toggle Button', link: '/toggle', hint: "toggle 컴포넌트를 확인합니다."},
+            { title: 'Input', link: '/input', hint: "input 컴포넌트를 확인합니다."},
+            { title: 'Checkbox', link: '/checkbox', hint: "Checkbox 컴포넌트를 확인합니다."},
+            { title: 'Radio', link: '/radio', hint: "Checkbox 컴포넌트를 확인합니다."},
+            { title: 'Accordion', link: '/accordion', hint: "accordion 컴포넌트를 확인합니다."},
           ],
         }
       ],

@@ -1,7 +1,7 @@
 <template>
   <div class="input_wrap">
     <input
-    :value="modelValue"
+      :value="modelValue"
       :type="type"
       :placeholder="placeholder"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -86,19 +86,16 @@ export default {
     background-color: $wh;
     transition: 0.25s;
     cursor: pointer;
-  
+
+    
     &:hover { border: $input-focurs; }
     &:focus { 
       border: $input-focurs; 
       box-shadow: $input-shadow;
     }
-    &:disabled { 
-      border: $input-disabled; 
-      background-color: $gray20; 
-      color: $gray60;
-    }
-      
-    &:required { 
+    
+    // 유효성이 충족되지 않았을 때
+    &:invalid { 
       border: $input-error;
       background-color: $danger5; 
       color: $danger50;
@@ -106,13 +103,28 @@ export default {
         box-shadow: $input-error-shadow;
       }
     }
-  
+    // 유효성이 충족되었을 때
+    &:valid { 
+      border: $border;
+      &:hover { border: $input-focurs; }
+      &:focus { 
+        border: $input-focurs; 
+        box-shadow: $input-shadow;
+      }
+    }
+    
     &:read-only {
       &:hover,
       &:focus {
         border: $border;
         box-shadow: none;
       }
+    }
+
+    &:disabled { 
+      border: $input-disabled; 
+      background-color: $gray20; 
+      color: $gray60;
     }
 
     // size
