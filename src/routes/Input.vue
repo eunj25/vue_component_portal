@@ -41,22 +41,25 @@
   </Paper>
 
   <Paper>
-    <form>
+    <form @submit.prevent="onSubmit">
       <Input 
         v-model="idValue" 
         placeholder="ID를 입력해주세요." 
         message="필수항목입니다."
         size="md"
+        :hasError="idError"
       />
       <Input 
         v-model="pwValue" 
         placeholder="PW를 입력해주세요." 
         message="필수항목입니다."
         size="md"
+        :hasError="pwError"
       />
       <Button 
         variant="bk"
         size="md"
+        type="submit"
       >
       check 
     </Button>
@@ -90,11 +93,26 @@ export default {
       readOnlyValue: "readOnly input",
       disabledValue: "disabled input",
 
-      
+      idValue: "",
+      pwValue: ""
     };
   },
   computed: {
-
+    idError() {
+      return !this.idValue || this.idValue.length > 5;
+    },
+    pwError() {
+      return !this.pwValue || this.pwValue.length > 8;
+    }
+  },
+  methods: {
+    onSubmit() {
+      if (this.idError || this.pwError) {
+        alert("입력값을 확인해주세요.");
+        return;
+      }
+      alert("id: " + this.idValue + " pw: " + this.pwValue);
+    }
   }
 };
 </script>
