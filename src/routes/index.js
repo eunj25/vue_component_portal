@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import button from './Button'
 import badge from './Badge'
+import button from './Button'
+import tabBtn from './TabBtn'
 import input from './Input'
 import checkbox from './Checkbox'
 import radio from './Radio'
@@ -27,12 +28,12 @@ export default createRouter({
       component: button
     },
     {
-      path:'/button',
-      component: button
-    },
-    {
       path:'/toggle',
       component: toggle
+    },
+    {
+      path:'/tabBtn',
+      component: tabBtn
     },
     {
       path:'/input',
