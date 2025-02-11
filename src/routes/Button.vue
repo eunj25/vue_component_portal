@@ -20,26 +20,30 @@
     </label>
   </Paper>
   
-  <Paper>
+  <Card
+    cardTitle="Preivew"
+    caption="Button Component">
     <Button 
       :variant="computedVariant"
       :size="selectedSize"
     >
       Test Button
     </Button>
-  </Paper>
+  </Card>
 
 </template>
 
 <script>
 import Paper from "~/components/BasePaper.vue";
 import Button from "~/components/BaseButton.vue";
+import Card from "~/components/BaseCard.vue";
 import Select from "~/components/BaseSelectbox.vue";
 
 export default {
   components: {
     Button,
     Paper,
+    Card,
     Select
   },
   data() {

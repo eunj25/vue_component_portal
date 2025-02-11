@@ -15,25 +15,29 @@
     />
   </Paper>
 
-  <Paper>
+  <Card
+    cardTitle="Preivew"
+    caption="Badge Component">
     <Badge 
       :variant="selectedVariant" 
       :type="selectedType">
       Test Badge
     </Badge>
-  </Paper>
+  </Card>
  
 </template>
 
 <script>  
 import Badge from "~/components/BaseBadge.vue";
 import Paper from "~/components/BasePaper.vue";
+import Card from "~/components/BaseCard.vue";
 import Select from "~/components/BaseSelectbox.vue";
 
 export default {
   components: {
     Badge,
     Select,
+    Card,
     Paper
   },
   data() {
