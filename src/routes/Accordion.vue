@@ -6,24 +6,30 @@
       :options="selectOptions" size="md" 
     />
   </Paper>
-  <Accordion 
-   :caption="computedCaption">
-    <template #title>accordion title</template>
-    <template #content>
-      <p>accordion content</p>
-    </template>
-  </Accordion>
+  <Card
+    cardTitle="Preivew"
+    caption="Accordion Component">
+    <Accordion 
+     :caption="computedCaption">
+      <template #title>accordion title</template>
+      <template #content>
+        <p>accordion content</p>
+      </template>
+    </Accordion>
+  </Card>
 </template>
 
 <script>
 import Select from "~/components/BaseSelectbox.vue";
 import Paper from "~/components/BasePaper.vue";
+import Card from "~/components/BaseCard.vue";
 import Accordion from "~/components/Accordion.vue";
 
 export default {
   components: {
     Select,
     Accordion,
+    Card,
     Paper
   },
   data() {

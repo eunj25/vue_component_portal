@@ -3,6 +3,7 @@ import badge from './Badge'
 import button from './Button'
 import tabBtn from './TabBtn'
 import input from './Input'
+import modal from './Modal'
 import checkbox from './Checkbox'
 import radio from './Radio'
 import accordion from './Accordion'
@@ -38,6 +39,10 @@ export default createRouter({
     {
       path:'/input',
       component: input
+    },
+    {
+      path:'/modal',
+      component: modal
     },
     {
       path:'/checkbox',

@@ -82,6 +82,7 @@ export default {
   border-radius: $border-radius;
   background-color: $gray30;
   padding: $space-4;
+  margin-bottom: $space-16;
 
   .tab_button {
     width: 300px;

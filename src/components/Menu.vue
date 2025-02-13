@@ -42,6 +42,7 @@ export default {
             { title: 'Badge', link: '/badge', hint: "badge 컴포넌트를 확인합니다."},
             { title: 'Button', link: '/button', hint: "button 컴포넌트를 확인합니다."},
             { title: 'Input', link: '/input', hint: "input 컴포넌트를 확인합니다."},
+            { title: 'Modal', link: '/modal', hint: "input 컴포넌트를 확인합니다."},
             { title: 'Radio', link: '/radio', hint: "Checkbox 컴포넌트를 확인합니다."},
             { title: 'Tab Button', link: '/tabBtn', hint: "toggle 컴포넌트를 확인합니다."},
             { title: 'Toggle Button', link: '/toggle', hint: "toggle 컴포넌트를 확인합니다."},

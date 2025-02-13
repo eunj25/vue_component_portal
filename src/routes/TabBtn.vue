@@ -14,26 +14,31 @@
     />
   </Paper>
   
-  <TabBtn 
-    v-model="activeTab" 
-    :tabs="tabs" 
-    :variant="selectedVariant"
-    :size="selectedSize">
-    <template #tab1>
-      <Paper>tab1의 내용</Paper>
-    </template>
-    <template #tab2>
-      <Paper>tab2의 내용</Paper>
-    </template>
-    <template #tab3>
-      <Paper>tab3의 내용</Paper>
-    </template>
-  </TabBtn>
+  <Card
+    cardTitle="Preivew"
+    caption="Tab Button Component">
+    <TabBtn 
+      v-model="activeTab" 
+      :tabs="tabs" 
+      :variant="selectedVariant"
+      :size="selectedSize">
+      <template #tab1>
+        <Paper>tab1의 내용</Paper>
+      </template>
+      <template #tab2>
+        <Paper>tab2의 내용</Paper>
+      </template>
+      <template #tab3>
+        <Paper>tab3의 내용</Paper>
+      </template>
+    </TabBtn>
+  </Card>
 
 </template>
 
 <script>
 import Paper from "~/components/BasePaper.vue";
+import Card from "~/components/BaseCard.vue";
 import Select from "~/components/BaseSelectbox.vue";
 import TabBtn from "~/components/TabButton.vue";
 
@@ -41,6 +46,7 @@ export default {
   components: {
     TabBtn,
     Select,
+    Card,
     Paper
   },
   data() {

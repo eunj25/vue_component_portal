@@ -4,7 +4,7 @@
   <main>
     <Menu  @update-header="updateHeader" />
     <div class="container">
-      <pageHeader :title="pageTitle" :hint="pageHint" />
+      <!-- <pageHeader :title="pageTitle" :hint="pageHint" /> -->
       <div class="container_inner">
         <RouterView />
       </div>
@@ -27,20 +27,8 @@ export default {
     Header,
     Menu,
     Footer,
-    pageHeader
+    // pageHeader
   }, 
-  setup() {
-    const pageTitle = ref("페이지 제목");
-    const pageHint = ref("페이지 설명");
-
-    const updateHeader = (title, hint) => {
-      pageTitle.value = title;
-      pageHint.value = hint;
-    };
-
-    return { pageTitle, pageHint, updateHeader };
-  },
-  
 }
 </script>
 
@@ -58,11 +46,22 @@ export default {
     width: calc(100% - $menu-width);
     overflow-y: scroll;
     .container_inner {
-      padding: 0 $space-40;
       display: flex;
+      align-items: flex-start;
+      padding: $space-40;
       gap: $space-16;
-      // flex-direction: column;
+      > * {
+        flex: 1;
+      }
     }
   }
+
+  @media (max-width: 900px) {
+    .container_inner {
+      flex-direction: column;
+      align-items: stretch !important;
+    }
+  }
+
 
 </style>
